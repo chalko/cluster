@@ -1,0 +1,9 @@
+apiVersion: v2
+name: fog-cluster
+description: A Helm chart the default install of my local fog cluster
+
+type: application
+
+version: 0.1.0
+
+appVersion: 0.1.0

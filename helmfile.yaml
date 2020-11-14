@@ -12,3 +12,6 @@ releases:
     values:
       - installCRDs: true
       - cert-manager.yaml
+  - name: letsencrypt
+    namespace: cert-manager
+    chart: ./letsencrypt

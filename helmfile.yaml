@@ -23,3 +23,12 @@ releases:
     chart: kubernetes-dashboard/kubernetes-dashboard
     namespace: kubernetes-dashboard
 
+  - name: zorua
+    namespace: zorua
+    chart: ../sadm/zorua/
+    values:
+      - zorua.yaml
+    secrets:
+      - secrets.zorua.yaml
+
+

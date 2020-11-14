@@ -5,6 +5,8 @@ repositories:
   url: https://charts.jetstack.io
 - name: kubernetes-dashboard
   url: https://kubernetes.github.io/dashboard/
+- name: cowboysysop
+  url: https://cowboysysop.github.io/charts/
 
 releases:
   - name: cert-manager
@@ -30,5 +32,9 @@ releases:
       - zorua.yaml
     secrets:
       - secrets.zorua.yaml
+
+  - name: whoami
+    namespace: whoami
+    chart: cowboysysop/whoami
 
 

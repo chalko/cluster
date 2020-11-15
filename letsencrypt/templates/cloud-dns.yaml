@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: clouddns-dns01-solver-svc-acct
+  namespace: default
+stringData:
+  key.json: {{ required "A valid .Values.keyjson must be specified!" .Values.keyjson | toJson }}
+type: Opaque

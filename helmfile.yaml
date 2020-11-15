@@ -21,7 +21,9 @@ releases:
     namespace: cert-manager
     chart: ./letsencrypt
     needs:
-      - cert-manager
+      - cert-manager/cert-manager
+    secrets:
+      - secrets.letsencrypt.yaml
 
   - name: metallb
     namespace: metallb-system

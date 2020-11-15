@@ -1,0 +1,35 @@
+# the hostname you want to use for the Pi
+hostname: k0
+
+# a public key if you intend to use ssh to connect to the node. This is highly recommended since k3OS has no root user.
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC651SMrIiurFFQd9Wt/inbs+zw1pBmmVrtF+Is6MZwodHfsCzc7WyIlUPcOLZRl1MousH1Teov/vC59ERXCDQE2x1rZtVdk09qzSFMk5BoUhLp4552UZLURE9ErnXsyXC7lbUrtXkN2+8SmBDi1inCyaNvH4uujnixyU7J2GgHBPhogXi5aVmbhMrItIAR7sHnQAC1rVtVGineNorkegw1fqBvti51bLftA/M8DaSVm+b27pmsXnAe0vVQnKTkAvtYDCWzpPKfMfTcbk8LLicCs/xIsLNjViVP+YlRngAsvMPSsCIeI8haHlJz6P8DLgucj78BaaHjXkn0lReHFE/LfMK3BE5p8MYUzO1W4pcuP42fOB7cYQslrZs+ouS/iL4PIVzduQzkcCEb36nqicgfLLUdz83q8JYlcSs9Ssg5ll4wDcHOoBjyXKvLPzrEj93sqLLuyr61opwah+mpalKyIWAJgyqRM4S+hQIdT39+3Xt81reCPXnuvKLsYM57MQb/uxVogzKLhEt+KsL88W3ysuamg74UxZyq7ioQBtUKi9pn2oGZO0KC2j5D3NP9w3ZtTqRYtqjiGcVrTIHihmO1VEotMq/G1JA7qv9BeU0/zX83ZhCELuvx+/CWDST09D8E5oEpKtdEvGBqPIAkl8DXUoTc2bSQ02Wv9CrZB5GZZw== nick@chalko.com
+
+# Ethernet config
+write_files:
+  - path: /var/lib/connman/default.config
+    content: |-
+      [service_eth0]
+      Type=ethernet
+      IPv4=192.168.81.1/255.255.224.0/192.168.84.1
+      IPv6=off
+      Nameservers=192.168.84.1
+      Timeservers=0.us.pool.ntp.org,1.us.pool.ntp.org
+
+k3OS:
+  ntp_servers:
+    - 0.us.pool.ntp.org
+    - 1.us.pool.ntp.org
+
+  dns_nameservers:
+    - 192.168.84.1
+    - 8.8.8.8
+    - 1.1.1.1
+
+  k3s_args:
+    - server
+    - --disable=servicelb
+    - --disable=traefik
+
+
+

@@ -28,8 +28,8 @@ k3OS:
 
   k3s_args:
     - server
-    - --disable=servicelb
-    - --disable=traefik
+    - "--disable=servicelb"
+    - "--disable=traefik"
 
 
 

@@ -21,6 +21,12 @@ releases:
     namespace: cert-manager
     chart: ./letsencrypt
 
+  - name: metallb
+    namespace: metallb-system
+    chart: ./metallb
+    secrets:
+      - secrets.metallb.yaml
+
   - name: kubernetes-dashboard
     chart: kubernetes-dashboard/kubernetes-dashboard
     namespace: kubernetes-dashboard

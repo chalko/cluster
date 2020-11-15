@@ -16,20 +16,17 @@ write_files:
       Nameservers=192.168.84.1
       Timeservers=0.us.pool.ntp.org,1.us.pool.ntp.org
 
-k3OS:
+k3os:
   ntp_servers:
     - 0.us.pool.ntp.org
     - 1.us.pool.ntp.org
-
   dns_nameservers:
     - 192.168.84.1
     - 8.8.8.8
     - 1.1.1.1
-
   k3s_args:
     - server
-    - "--disable=servicelb"
-    - "--disable=traefik"
+    - "--disable=traefik,servicelb"
 
 
 

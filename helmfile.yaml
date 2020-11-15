@@ -20,6 +20,8 @@ releases:
   - name: letsencrypt
     namespace: cert-manager
     chart: ./letsencrypt
+    needs:
+      - cert-manager
 
   - name: metallb
     namespace: metallb-system

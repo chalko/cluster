@@ -53,5 +53,7 @@ releases:
   - name: whoami
     namespace: whoami
     chart: cowboysysop/whoami
+    values:
+      - whoami.yaml
 
 

@@ -3,7 +3,14 @@ service:
 
 ingress:
   enabled: true
+  annotations: {
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  }
   hosts:
-    - host: "whoami"
+    - host: "whoami.fog.chalko.com"
       paths:
         - "/"
+  tls:
+    - secretName: whoami-fo-chalko-com-tls
+      hosts:
+        - "whoami.fog.chalko.com"

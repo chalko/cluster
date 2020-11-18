@@ -36,7 +36,8 @@ releases:
   - name: traefik
     namespace: traefik-v2
     chart: traefik/traefik
-
+    values:
+      - traefik.yaml
 
   - name: kubernetes-dashboard
     chart: kubernetes-dashboard/kubernetes-dashboard

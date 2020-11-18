@@ -9,4 +9,4 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 192.168.82.0-192.168.82.254
+      - 192.168.82.1-192.168.82.254

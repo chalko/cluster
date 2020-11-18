@@ -42,6 +42,8 @@ releases:
   - name: kubernetes-dashboard
     chart: kubernetes-dashboard/kubernetes-dashboard
     namespace: kubernetes-dashboard
+    values:
+      - kubernetes-dashboard.yaml
 
   - name: zorua
     namespace: zorua

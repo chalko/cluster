@@ -2,8 +2,8 @@ service:
   type: LoadBalancer
 
 ingress:
-  enabled: false
+  enabled: true
   hosts:
-    - host: "whoami.local"
+    - host: "whoami"
       paths:
         - "/"

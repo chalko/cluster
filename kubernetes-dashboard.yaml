@@ -7,3 +7,5 @@
 #  hosts:
 #    - kd.local
 #    - kd
+metricsScraper:
+  enabled: true

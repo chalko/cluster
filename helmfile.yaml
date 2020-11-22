@@ -8,6 +8,11 @@ repositories:
   - name: traefik
     url: https://helm.traefik.io/traefik
 
+environments:
+  default:
+    values:
+    - fog.yaml
+
 releases:
   - name: cert-manager
     chart: jetstack/cert-manager
@@ -41,7 +46,7 @@ releases:
     chart: kubernetes-dashboard/kubernetes-dashboard
     namespace: kd
     values:
-      - kd.yaml
+      - kd.yaml.gotmpl
 
   - name: zorua
     namespace: zorua

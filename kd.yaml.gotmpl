@@ -9,10 +9,10 @@ ingress:
     traefik.ingress.kubernetes.io/router.tls: "true"
   enabled: true
   hosts:
-    - kd.fog.chalko.com
+    - kd.{{ .Values.fog.domain}}
   tls:
     - secretName: kd-tls
       hosts:
-        - kd.fog.chalko.com
+        - kd.{{ .Values.fog.domain}}
 metricsScraper:
   enabled: true

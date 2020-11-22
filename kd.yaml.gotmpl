@@ -9,10 +9,10 @@ ingress:
     traefik.ingress.kubernetes.io/router.tls: "true"
   enabled: true
   hosts:
-    - kd.{{ .Values.fog.domain}}
+    - {{ .Release.Name}}.{{ .Values.fog.domain}}
   tls:
-    - secretName: kd-tls
+    - secretName: {{ .Release.Name}}-tls
       hosts:
-        - kd.{{ .Values.fog.domain}}
+        - {{ .Release.Name}}.{{ .Values.fog.domain}}
 metricsScraper:
   enabled: true

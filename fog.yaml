@@ -1,0 +1,8 @@
+fog:
+  public_doman: chalko.com
+  domain: fog.chalko.com
+  lb:
+    addresses:
+      - 192.168.82.1-192.168.82.254
+  ingress:
+    ip: 192.168.81.100

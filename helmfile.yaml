@@ -34,7 +34,7 @@ releases:
       - secrets.metallb.yaml
 
   - name: traefik
-    namespace: traefik-v2
+    # namespace: traefik-v2
     chart: traefik/traefik
     values:
       - traefik.yaml

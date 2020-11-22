@@ -1,11 +1,13 @@
 service:
-  type: LoadBalancer
+  type: ClusterIP
 
 ingress:
   enabled: true
-  annotations: {
+  annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-  }
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  
   hosts:
     - host: "whoami.fog.chalko.com"
       paths:

@@ -39,11 +39,11 @@ releases:
     values:
       - traefik.yaml
 
-  - name: kubernetes-dashboard
+  - name: kd
     chart: kubernetes-dashboard/kubernetes-dashboard
-    namespace: kubernetes-dashboard
+    namespace: kd
     values:
-      - kubernetes-dashboard.yaml
+      - kd.yaml
 
   - name: zorua
     namespace: zorua

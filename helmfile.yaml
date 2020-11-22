@@ -48,6 +48,13 @@ releases:
     values:
       - kubernetes-dashboard.yaml.gotmpl
 
+  - name: kubernetes-dashboard-access
+    chart: ./kubernetes-dashboard-access
+    namespace: kubernetes-dashboard
+    createNamespace: false
+    values:
+      - kubernetes-dashboard-access.yaml
+
   - name: zorua
     namespace: zorua
     chart: ../sadm/zorua/

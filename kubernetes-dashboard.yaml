@@ -2,10 +2,12 @@
 #service:
 #  type: LoadBalancer
 #  loadBalancerIP: 192.168.82.20
-#ingress:
-#  enabled: true
-#  hosts:
-#    - kd.local
-#    - kd
+ingress:
+  annotations: {
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  }
+  enabled: true
+  hosts:
+    - kd.fog.chalko.com
 metricsScraper:
   enabled: true

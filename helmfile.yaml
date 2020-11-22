@@ -40,7 +40,7 @@ releases:
     namespace: traefik
     chart: traefik/traefik
     values:
-      - traefik.yaml
+      - traefik.yaml.gotmpl
 
   - name: kd
     chart: kubernetes-dashboard/kubernetes-dashboard

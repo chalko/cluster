@@ -2,17 +2,17 @@
 #service:
 #  type: LoadBalancer
 #  loadBalancerIP: 192.168.82.20
-ingress:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-  enabled: true
-  hosts:
-    - {{ .Release.Name}}.{{ .Values.fog.domain}}
-  tls:
-    - secretName: {{ .Release.Name}}-tls
-      hosts:
-        - {{ .Release.Name}}.{{ .Values.fog.domain}}
+#ingress:
+#  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-prod
+#    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+#    traefik.ingress.kubernetes.io/router.tls: "true"
+#  enabled: true
+#  hosts:
+#    - {{ .Release.Name}}.{{ .Values.fog.domain}}
+#  tls:
+#    - secretName: {{ .Release.Name}}-tls
+#      hosts:
+#        - {{ .Release.Name}}.{{ .Values.fog.domain}}
 metricsScraper:
   enabled: true

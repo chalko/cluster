@@ -42,11 +42,11 @@ releases:
     values:
       - traefik.yaml.gotmpl
 
-  - name: kd
+  - name: kubernetes-dashboard
     chart: kubernetes-dashboard/kubernetes-dashboard
-    namespace: kd
+    namespace: kubernetes-dashboard
     values:
-      - kd.yaml.gotmpl
+      - kubernetes-dashboard.yaml.gotmpl
 
   - name: zorua
     namespace: zorua

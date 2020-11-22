@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kubernetes-dashboard-access
+description: A Helm chart for Kubernetes Dashboard access
+type: application
+version: 0.1.0
+appVersion: 0.1.0

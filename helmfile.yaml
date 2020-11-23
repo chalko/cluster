@@ -69,4 +69,8 @@ releases:
     values:
       - whoami.yaml
 
+  - name: coredns
+    chart: ../coredns-deployment/charts/coredns
+    values:
+      - coredns.yaml.gotmpl
 

@@ -71,6 +71,7 @@ releases:
 
   - name: coredns
     chart: ../coredns-deployment/charts/coredns
+    namespace: coredns
     values:
       - coredns.yaml.gotmpl
 

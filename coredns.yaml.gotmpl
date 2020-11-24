@@ -10,6 +10,23 @@ service:
 # https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#coredns-configmap-options
 servers:
   - zones:
+      - zone: fog.chalko.com
+      - zone: cluster.local
+      - zone: in-addr.arpa
+      - zone: ip6.arpa
+    port: 53
+    plugins:
+      # Required to query kubernetes API for data
+      - name: kubernetes
+        parameters: cluster.local in-addr.arpa ip6.arpa
+        configBlock: |-
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+          ttl 30
+      - name: k8s_external
+        parameters: fog.chalko.com
+      - name: log
+  - zones:
       - zone: .
     port: 53
     plugins:
@@ -20,13 +37,6 @@ servers:
           lameduck 5s
       # Serves a /ready endpoint on :8181, required for readinessProbe
       - name: ready
-      # Required to query kubernetes API for data
-      - name: kubernetes
-        parameters: cluster.local in-addr.arpa ip6.arpa
-        configBlock: |-
-          pods insecure
-          fallthrough in-addr.arpa ip6.arpa
-          ttl 30
       # Serves a /metrics endpoint on :9153, required for serviceMonitor
       - name: prometheus
         parameters: 0.0.0.0:9153

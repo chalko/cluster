@@ -1,7 +1,7 @@
 serviceType: LoadBalancer
 service:
   split: true
-# clusterIP: ""
   loadBalancerIP: "192.168.82.200"
-# externalIPs: []
-# externalTrafficPolicy: ""
+  annotations:
+   metallb.universe.tf/allow-shared-ip: "DNS"
+

@@ -17,16 +17,13 @@ releases:
   - name: cert-manager
     chart: jetstack/cert-manager
     namespace: cert-manager
-    version: v1.0.4
+    version: v1.1.0
     values:
-      - installCRDs: true
       - cert-manager.yaml
 
   - name: letsencrypt
     namespace: cert-manager
     chart: ./letsencrypt
-    needs:
-      - cert-manager/cert-manager
     secrets:
       - secrets.letsencrypt.yaml
 

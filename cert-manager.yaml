@@ -1,1 +1,2 @@
-# Values for cert-manager.yaml
+
+installCRDs: true

@@ -2,6 +2,14 @@ service:
   spec:
     loadBalancerIP:  {{ .Values.fog.ingress.ip}}
     externalTrafficPolicy: Cluster
+
+
 logs:
   general:
     level: INFO
+
+ports:
+  websecure:
+    tls:
+      enabled: true
+      certResolver: letsencrypt-prod

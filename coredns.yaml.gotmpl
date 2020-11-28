@@ -24,7 +24,7 @@ servers:
           fallthrough in-addr.arpa ip6.arpa
           ttl 30
       - name: k8s_external
-        parameters: {{ Values.fog.domain }}
+        parameters: {{ .Values.fog.domain }}
       - name: log
   - zones:
       - zone: .

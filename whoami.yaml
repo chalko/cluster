@@ -13,6 +13,6 @@ ingress:
       paths:
         - "/"
   tls:
-    - secretName: whoami-fo-chalko-com-tls
+    - secretName: whoami-fog-chalko-com-tls
       hosts:
         - "whoami.fog.chalko.com"

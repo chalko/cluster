@@ -24,7 +24,7 @@ servers:
           fallthrough in-addr.arpa ip6.arpa
           ttl 30
       - name: k8s_external
-        parameters: fog.chalko.com
+        parameters: {{ Values.fog.domain }}
       - name: log
   - zones:
       - zone: .

@@ -68,7 +68,7 @@ releases:
 
   - name: coredns
     chart: ../coredns-deployment/charts/coredns
-    namespace: coredns
+    namespace: kube-system
     values:
       - coredns.yaml.gotmpl
 

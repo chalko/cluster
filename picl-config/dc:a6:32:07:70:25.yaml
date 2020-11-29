@@ -17,6 +17,7 @@ write_files:
       Timeservers=0.us.pool.ntp.org,1.us.pool.ntp.org
 
 run_cmd:
+  - "sudo mkdir -p /mnt/usbdisk/"
   - "sudo mount -t ext4 /dev/usbdisk /mnt/usbdisk/"
 
 k3os:
@@ -27,6 +28,8 @@ k3os:
     - 192.168.82.200
     - 8.8.8.8
     - 1.1.1.1
+  labels:
+     fog.storage: usbdisk
   k3s_args:
     - server
     - "--disable=traefik,servicelb,coredns"

@@ -17,21 +17,6 @@ resources:
     cpu: 100m
     memory: 128Mi
 
-## Create HorizontalPodAutoscaler object.
-##
-# autoscaling:
-#   minReplicas: 1
-#   maxReplicas: 10
-#   metrics:
-#   - type: Resource
-#     resource:
-#       name: cpu
-#       targetAverageUtilization: 60
-#   - type: Resource
-#     resource:
-#       name: memory
-#       targetAverageUtilization: 60
-
 rollingUpdate:
   maxUnavailable: 1
   maxSurge: 25%
@@ -46,7 +31,7 @@ podAnnotations: {}
 #  cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
 
 
-serviceType: "ClusterIP"
+serviceType: "LoadBalancer"
 
 prometheus:
   service:
@@ -60,11 +45,8 @@ prometheus:
     namespace: ""
 
 service:
-  split: false
-# clusterIP: ""
-# loadBalancerIP: ""
-# externalIPs: []
-# externalTrafficPolicy: ""
+  split: true
+  loadBalancerIP: "192.168.82.200"
   annotations: {}
 
 serviceAccount:
@@ -120,33 +102,6 @@ servers:
   - name: reload
   - name: loadbalance
 
-# Complete example with all the options:
-# - zones:                 # the `zones` block can be left out entirely, defaults to "."
-#   - zone: hello.world.   # optional, defaults to "."
-#     scheme: tls://       # optional, defaults to "" (which equals "dns://" in CoreDNS)
-#   - zone: foo.bar.
-#     scheme: dns://
-#     use_tcp: true        # set this parameter to optionally expose the port on tcp as well as udp for the DNS protocol
-#                          # Note that this will not work if you are also exposing tls or grpc on the same server
-#   port: 12345            # optional, defaults to "" (which equals 53 in CoreDNS)
-#   plugins:               # the plugins to use for this server block
-#   - name: kubernetes     # name of plugin, if used multiple times ensure that the plugin supports it!
-#     parameters: foo bar  # list of parameters after the plugin
-#     configBlock: |-      # if the plugin supports extra block style config, supply it here
-#       hello world
-#       foo bar
-
-# expects input structure as per specification https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#affinity-v1-core
-# for example:
-#   affinity:
-#     nodeAffinity:
-#      requiredDuringSchedulingIgnoredDuringExecution:
-#        nodeSelectorTerms:
-#        - matchExpressions:
-#          - key: foo.bar.com/role
-#            operator: In
-#            values:
-#            - master
 affinity: {}
 
 # Node labels for pod assignment

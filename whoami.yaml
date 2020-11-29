@@ -12,7 +12,7 @@ ingress:
     - host: "whoami.fog.chalko.com"
       paths:
         - "/"
-  tls:
-    - secretName: whoami-fog-chalko-com-tls
-      hosts:
-        - "whoami.fog.chalko.com"
+#  tls:
+#    - secretName: whoami-fog-chalko-com-tls
+#      hosts:
+#        - "whoami.fog.chalko.com"

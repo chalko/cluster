@@ -1,0 +1,36 @@
+
+serviceType: LoadBalancer
+service:
+  split: true
+  loadBalancerIP: "192.168.82.200"
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "DNS"
+
+
+# Default zone is what Kubernetes recommends:
+# modified from https://github.com/maelvls/k.maelvls.dev/blob/master/helm/ext-coredns.yaml
+servers:
+  - zones:
+      - zone: .
+    port: 53
+    plugins:
+      - name: errors
+      # Serves a /health endpoint on :8080, required for livenessProbe
+      - name: health
+        configBlock: |-
+          lameduck 5s
+      # Serves a /ready endpoint on :8181, required for readinessProbe
+      - name: ready
+      - name: k8s_gateway
+        parameters: fog.chalko.com
+      # Serves a /metrics endpoint on :9153, required for serviceMonitor
+      - name: prometheus
+        parameters: 0.0.0.0:9153
+      - name: forward
+        parameters: . /etc/resolv.conf
+      - name: cache
+        parameters: 30
+      - name: loop
+      - name: reload
+      - name: loadbalance
+

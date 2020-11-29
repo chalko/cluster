@@ -72,9 +72,9 @@ releases:
     values:
       - whoami.yaml
 
-#  - name: coredns
-#    chart: ../coredns-deployment/charts/coredns
-#    namespace: kube-system
-#    values:
-#      - coredns.yaml.gotmpl
+  - name: fog-dns
+    chart: ../coredns-deployment/charts/coredns
+    namespace: fog-dns
+    values:
+      - fog-dns.yaml.gotmpl
 

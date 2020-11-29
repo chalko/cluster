@@ -21,11 +21,11 @@ releases:
     values:
       - cert-manager.yaml
 
-  - name: letsencrypt
-    namespace: cert-manager
-    chart: ./letsencrypt
-    secrets:
-      - secrets.letsencrypt.yaml
+#  - name: letsencrypt
+#    namespace: cert-manager
+#    chart: ./letsencrypt
+#    secrets:
+#      - secrets.letsencrypt.yaml
 
   - name: metallb
     namespace: metallb-system

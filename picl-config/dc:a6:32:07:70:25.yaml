@@ -33,6 +33,7 @@ k3os:
   k3s_args:
     - server
     - "--disable=traefik,servicelb,coredns"
+    - "--default-local-storage-path=/mnt/usbdisk/storage/"
 
 
 

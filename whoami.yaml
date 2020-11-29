@@ -5,8 +5,8 @@ ingress:
   enabled: true
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
+    #traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    #traefik.ingress.kubernetes.io/router.tls: "true"
 
   hosts:
     - host: "whoami.fog.chalko.com"

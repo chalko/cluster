@@ -76,6 +76,20 @@ priorityClassName: ""
 # https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#coredns-configmap-options
 servers:
   - zones:
+      - zone: {{ .Values.fog.domain }}
+    port: 53
+    plugins:
+      # Required to query kubernetes API for data
+      - name: kubernetes
+        parameters: {{ .Values.fog.domain }}
+        configBlock: |-
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+          ttl 30
+      - name: k8s_external
+        parameters: {{ .Values.fog.domain }}
+      - name: log
+  - zones:
       - zone: .
     port: 53
     plugins:

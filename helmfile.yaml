@@ -66,9 +66,9 @@ releases:
     values:
       - whoami.yaml
 
-  - name: coredns
-    chart: ../coredns-deployment/charts/coredns
-    namespace: kube-system
-    values:
-      - coredns.yaml.gotmpl
+#  - name: coredns
+#    chart: ../coredns-deployment/charts/coredns
+#    namespace: kube-system
+#    values:
+#      - coredns.yaml.gotmpl
 

@@ -32,7 +32,7 @@ k3os:
      fog.storage: usbdisk
   k3s_args:
     - server
-    - "--disable=traefik,servicelb,coredns"
+    - "--disable=traefik,servicelb"
     - "--default-local-storage-path=/mnt/usbdisk/storage/"
 
 

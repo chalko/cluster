@@ -24,6 +24,9 @@ releases:
   - name: letsencrypt
     namespace: cert-manager
     chart: ./letsencrypt
+    createNamespace: false
+    needs:
+      - cert-manager/cert-manager
     secrets:
       - secrets.letsencrypt.yaml
 
@@ -49,6 +52,9 @@ releases:
     chart: ./kubernetes-dashboard-access
     namespace: kubernetes-dashboard
     createNamespace: false
+    needs:
+      - kubernetes-dashboard/kubernetes-dashboard
+
     values:
       - kubernetes-dashboard-access.yaml
 

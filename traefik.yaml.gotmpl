@@ -4,6 +4,11 @@ service:
     externalTrafficPolicy: Cluster
 
 
+providers:
+  kubernetesIngress:
+    publishedService:
+      enabled: true
+
 logs:
   general:
     level: INFO

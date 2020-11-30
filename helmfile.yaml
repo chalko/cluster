@@ -73,7 +73,7 @@ releases:
       - whoami.yaml
 
   - name: fog-dns
-    chart: ../coredns-deployment/charts/coredns
+    chart:  ../k8s_gateway/charts/k8s-gateway/
     namespace: fog-dns
     values:
       - fog-dns.yaml.gotmpl

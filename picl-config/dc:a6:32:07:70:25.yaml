@@ -13,7 +13,7 @@ write_files:
       Type=ethernet
       IPv4=192.168.81.1/255.255.224.0/192.168.84.1
       IPv6=off
-      Nameservers=8.8.8.8,1.1.1
+      Nameservers=8.8.8.8,1.1.1.1
       Timeservers=0.us.pool.ntp.org,1.us.pool.ntp.org
 
 run_cmd:

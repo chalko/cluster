@@ -1,19 +1,25 @@
-#protocolHttp: true
-#service:
+protocolHttp: true
+service:
 #  type: LoadBalancer
 #  loadBalancerIP: 192.168.82.20
-#ingress:
-#  annotations:
-#    cert-manager.io/cluster-issuer: letsencrypt-prod
+  externalPort: 80
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 #    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 #    traefik.ingress.kubernetes.io/router.tls: "true"
-#  enabled: true
-#  hosts:
-#    - {{ .Release.Name}}.{{ .Values.fog.domain}}
-#  tls:
-#    - secretName: {{ .Release.Name}}-tls
-#      hosts:
-#        - {{ .Release.Name}}.{{ .Values.fog.domain}}
+  enabled: true
+  hosts:
+    - {{ .Release.Name}}.{{ .Values.fog.domain}}
+  tls:
+   - secretName:  {{ .Release.Name}}-tls
+     hosts:
+        - {{ .Release.Name}}.{{ .Values.fog.domain}}
+
+extraArgs:
+  - --enable-insecure-login
+  #- --tls-cert-file=/cert/tls.crt
+  #- --tls-key-file=/cart/tls.key
 #metricsScraper:
 #  enabled: true
 fullnameOverride: 'kubernetes-dashboard'

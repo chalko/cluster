@@ -3,8 +3,6 @@ service:
     loadBalancerIP:  {{ .Values.fog.ingress.ip}}
     externalTrafficPolicy: Cluster
 
-
-
 ingressClass:
   enabled: true
   isDefaultClass: true

@@ -7,6 +7,8 @@ repositories:
     url: https://cowboysysop.github.io/charts/
   - name: traefik
     url: https://helm.traefik.io/traefik
+  - name: gitea-charts
+    url: https://dl.gitea.io/charts/
 
 environments:
   default:
@@ -78,3 +80,8 @@ releases:
     values:
       - fog-dns.yaml.gotmpl
 
+  - name: gitea
+    chart:  gitea-charts/gitea
+    namespace: gitea
+    values:
+     - gitea.yaml.gotmpl

@@ -56,7 +56,6 @@ releases:
     createNamespace: false
     needs:
       - kubernetes-dashboard/kubernetes-dashboard
-
     values:
       - kubernetes-dashboard-access.yaml
 

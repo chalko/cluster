@@ -80,8 +80,8 @@ releases:
     values:
       - fog-dns.yaml.gotmpl
 
-  - name: gitea
-    chart:  gitea-charts/gitea
-    namespace: gitea
-    values:
-     - gitea.yaml.gotmpl
+#  - name: gitea
+#    chart:  gitea-charts/gitea
+#    namespace: gitea
+#    values:
+#     - gitea.yaml.gotmpl

@@ -1,19 +1,19 @@
 protocolHttp: true
 service:
-#  type: LoadBalancer
-#  loadBalancerIP: 192.168.82.20
+  #  type: LoadBalancer
+  #  loadBalancerIP: 192.168.82.20
   externalPort: 80
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    ingress.kubernetes.io/ssl-redirect: true
+    ingress.kubernetes.io/ssl-redirect: "true"
   enabled: true
   hosts:
-    - {{ .Release.Name}}.{{ .Values.fog.domain}}
+    - {{ .Release.Name }}.{{ .Values.fog.domain}}
   tls:
-   - secretName:  {{ .Release.Name}}-tls
-     hosts:
-        - {{ .Release.Name}}.{{ .Values.fog.domain}}
+      - secretName: {{ .Release.Name }}-tls
+        hosts:
+          - {{ .Release.Name}}.{{ .Values.fog.domain}}
 
 extraArgs:
   - --enable-insecure-login

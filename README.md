@@ -39,7 +39,7 @@ The real answer is I like to play with new tech and I had a pi laying around so 
 * Kubernetes Dashboard https://kubernetes-dashboard.fog.chalko.com
 ## What's not working
 
-* encrypting traefik to Kubernest Dashboard.  
+* encrypting traefik to Kubernetes Dashboard.  
   * Kubernetes Dashboard in cluster as HTTP as a workaround. 
 
 ## TODO

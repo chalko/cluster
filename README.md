@@ -36,8 +36,7 @@ The real answer is I like to play with new tech and I had a pi laying around so 
 
 * Local DNS names for  services and ingress under the domain at fog.chalko.com
 * SSL for ingress using Let Encrypt
-* Kubernetes Dashboard https://kubernetes.fog.chalko.com 
-
+* Kubernetes Dashboard https://kubernetes.fog.chalko.com
 ## What's not working
 
 * encrypting traefik to Kubernest Dashboard.  

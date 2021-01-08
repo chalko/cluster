@@ -1,5 +1,6 @@
+# This is the retropie
 # the hostname you want to use for the Pi
-hostname: k0
+hostname: k1
 
 # a public key if you intend to use ssh to connect to the node. This is highly recommended since k3OS has no root user.
 ssh_authorized_keys:
@@ -11,7 +12,7 @@ write_files:
     content: |-
       [service_eth0]
       Type=ethernet
-      IPv4=192.168.81.1/255.255.224.0/192.168.84.1
+      IPv4=192.168.81.2/255.255.224.0/192.168.84.1
       IPv6=off
       Nameservers=8.8.8.8,1.1.1.1
       Timeservers=0.us.pool.ntp.org,1.us.pool.ntp.org
@@ -27,12 +28,10 @@ k3os:
   dns_nameservers:
     - 8.8.8.8
     - 1.1.1.1
-  labels:
-     fog.storage: usbdisk
   k3s_args:
-    - server
-    - "--disable=traefik,servicelb"
-    - "--default-local-storage-path=/mnt/usbdisk/storage/"
+    - agent
+  token: MASTER_TOKEN
+  server_url: https://192.168.81.1:6443
 
 
 

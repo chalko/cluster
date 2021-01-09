@@ -1,0 +1,16 @@
+version: v0.136.0
+dependencies:
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.1.0
+- name: kubernetes-dashboard
+  repository: https://kubernetes.github.io/dashboard/
+  version: 4.0.0
+- name: traefik
+  repository: https://helm.traefik.io/traefik
+  version: 9.12.3
+- name: whoami
+  repository: https://cowboysysop.github.io/charts/
+  version: 2.0.0
+digest: sha256:43bbb1f3d4fee94fc9b5f61f9634294640aeb6171e92ba089d64ed42b60d7d17
+generated: "2021-01-08T21:45:47.165200231-08:00"

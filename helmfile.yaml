@@ -75,11 +75,11 @@ releases:
     values:
       - whoami.yaml
 
-  - name: rancher
-    namespace: cattle-system
-    chart: rancher-stable/rancher
-    values:
-      - rancher.yaml.gotmpl
+#  - name: rancher
+#    namespace: cattle-system
+#    chart: rancher-stable/rancher
+#    values:
+#      - rancher.yaml.gotmpl
 
   - name: fog-dns
     chart:  ../k8s_gateway/charts/k8s-gateway/

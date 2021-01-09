@@ -59,13 +59,13 @@ releases:
     values:
       - kubernetes-dashboard-access.yaml
 
-  - name: zorua
-    namespace: zorua
-    chart: ../sadm/zorua/
-    values:
-      - zorua.yaml
-    secrets:
-      - secrets.zorua.yaml
+#  - name: zorua
+#    namespace: zorua
+#    chart: ../sadm/zorua/
+#    values:
+#      - zorua.yaml
+#    secrets:
+#      - secrets.zorua.yaml
 
   - name: whoami
     namespace: whoami

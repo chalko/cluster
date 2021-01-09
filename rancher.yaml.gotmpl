@@ -1,0 +1,4 @@
+hostname: {{.Release.Name }}.{{ .Values.fog.domain}}
+ingress.tls.source: letsEncrypt
+letsEncrypt.email: nick@chalko.com
+replicas: 1

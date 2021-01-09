@@ -6,11 +6,14 @@ dependencies:
 - name: kubernetes-dashboard
   repository: https://kubernetes.github.io/dashboard/
   version: 4.0.0
+- name: rancher
+  repository: https://releases.rancher.com/server-charts/stable
+  version: 2.5.5
 - name: traefik
   repository: https://helm.traefik.io/traefik
   version: 9.12.3
 - name: whoami
   repository: https://cowboysysop.github.io/charts/
   version: 2.0.0
-digest: sha256:43bbb1f3d4fee94fc9b5f61f9634294640aeb6171e92ba089d64ed42b60d7d17
-generated: "2021-01-08T21:45:47.165200231-08:00"
+digest: sha256:1a98b81a00c4d043b0a9f1152813a1035b1818444dfacdf9579ef00a5fedb013
+generated: "2021-01-08T23:42:19.667323967-08:00"

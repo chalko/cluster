@@ -9,6 +9,8 @@ repositories:
     url: https://helm.traefik.io/traefik
   - name: gitea-charts
     url: https://dl.gitea.io/charts/
+  - name: rancher-stable
+    url: https://releases.rancher.com/server-charts/stable
 
 environments:
   default:
@@ -73,6 +75,12 @@ releases:
     values:
       - whoami.yaml
 
+  - name: rancher
+    namespace: cattle-system
+    chart: rancher-stable/rancher
+    values:
+      - rancher.yaml.gotmpl
+
   - name: fog-dns
     chart:  ../k8s_gateway/charts/k8s-gateway/
     namespace: fog-dns
@@ -84,3 +92,4 @@ releases:
 #    namespace: gitea
 #    values:
 #     - gitea.yaml.gotmpl
+

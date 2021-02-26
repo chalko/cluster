@@ -6,7 +6,7 @@ cp picl-config/*  ${picl_generator_dir}/config
 cd ${picl_generator_dir} || exit
 docker run \
   -e RASPBERRY_PI_FIRMWARE=1.20210104 \
-  -e K3OS_VERSION=v1.20.2+k3s1 \
+  -e K3OS_VERSION="v0.19.5-rc.1" \
   -e TARGET=raspberrypi \
   -v ${PWD}:/app \
   -v /dev:/dev \

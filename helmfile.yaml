@@ -11,6 +11,8 @@ repositories:
     url: https://dl.gitea.io/charts/
   - name: rancher-stable
     url: https://releases.rancher.com/server-charts/stable
+  - name: yourls
+    url: https://charts.yourls.org/
 
 environments:
   default:
@@ -93,3 +95,6 @@ releases:
 #    values:
 #     - gitea.yaml.gotmpl
 
+  - name: yourls
+    chart: yourls/yourls
+    namespace: yourls

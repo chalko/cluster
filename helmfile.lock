@@ -5,12 +5,15 @@ dependencies:
   version: v1.1.0
 - name: kubernetes-dashboard
   repository: https://kubernetes.github.io/dashboard/
-  version: 4.0.2
+  version: 5.0.3
 - name: traefik
   repository: https://helm.traefik.io/traefik
-  version: 9.14.3
+  version: 10.6.0
 - name: whoami
   repository: https://cowboysysop.github.io/charts/
-  version: 2.2.0
-digest: sha256:dc16e5d5513a2d73b20747a4c6bcd030f73459e5dc8417a09ffce93bbe31cef0
-generated: "2021-02-25T22:08:03.148567192-08:00"
+  version: 2.5.0
+- name: yourls
+  repository: https://charts.yourls.org/
+  version: 3.0.4
+digest: sha256:596213e4818e20afb17923f6496fd80866a200a91b562c5e5a4c0e5de0516b4e
+generated: "2021-10-21T18:34:05.684308074-07:00"

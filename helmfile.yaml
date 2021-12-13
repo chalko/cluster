@@ -95,6 +95,8 @@ releases:
 #    values:
 #     - gitea.yaml.gotmpl
 
-  - name: yourls
-    chart: yourls/yourls
-    namespace: yourls
+  - name: url-redirector
+    chart:  ../url-redirector/helm/url-redirector/
+    namespace: url-redirector
+ #   values:
+ #     - fog-dns.yaml.gotmpl

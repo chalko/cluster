@@ -8,7 +8,7 @@ I single Raspberry Pi 4 w 2G ram
 
 ## k30s
 
-The k8s distribution I chose was k30s which I install
+The k8s distribution I chose was k3os which I install
 on my Raspberry Pi 4 using 
 [PiCl k3os image generator](https://github.com/sgielen/picl-k3os-image-generator)
 with the configs at [picl-config](picl-config)
@@ -29,12 +29,12 @@ At one point I wanted to keep track of my Cable Modem statistics.
 And months later I have decided that having a local k8s cluster is the 
 "best" way to do this.  
 
-The real answer is I like to play with new tech and I had a pi laying around so why not.
-
+The real answer is I like to play with new tech, and I had a pi lying
+around so why not.
 
 ## What's working
 
-* Local DNS names for  services and ingress under the domain at fog.chalko.com
+* Local DNS names for services and ingress under the domain at fog.chalko.com
 * SSL for ingress using Let Encrypt
 * Kubernetes Dashboard https://kubernetes-dashboard.fog.chalko.com
 ## What's not working

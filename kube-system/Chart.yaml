@@ -1,6 +1,6 @@
 apiVersion: v2
 name: kube-system
-description: A Helm chart over ridinge  default k30s configs
+description: A Helm chart over ridinge  default k3os configs
 type: application
 version: 0.1.0
 appVersion: 1.11.0

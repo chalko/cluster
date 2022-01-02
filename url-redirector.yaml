@@ -1,8 +1,23 @@
 image:
   tag: 1.4.1-arm64
 replicaCount: 1
+
 appConfig: |
   '*':
     routes:
       linkedin: https://www.linkedin.com/in/chalko/
 
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  hosts:
+    - host: "go.fog.chalko.com"
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: go-fog-chalko-com-tls
+      hosts:
+        - "go.fog.chalko.com"

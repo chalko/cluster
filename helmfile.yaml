@@ -98,5 +98,5 @@ releases:
   - name: url-redirector
     chart:  ../url-redirector/helm/url-redirector/
     namespace: url-redirector
- #   values:
- #     - fog-dns.yaml.gotmpl
+    values:
+      - url-redirector.yaml

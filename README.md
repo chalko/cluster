@@ -6,7 +6,7 @@ The configuration for my cluster
 
 I single Raspberry Pi 4 w 2G ram
 
-## k30s
+## k3os
 
 The k8s distribution I chose was k3os which I install
 on my Raspberry Pi 4 using 

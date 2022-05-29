@@ -83,11 +83,11 @@ releases:
 #    values:
 #      - rancher.yaml.gotmpl
 
-  - name: fog-dns
-    chart:  ../k8s_gateway/charts/k8s-gateway/
-    namespace: fog-dns
-    values:
-      - fog-dns.yaml.gotmpl
+#  - name: fog-dns
+#    chart:  ../k8s_gateway/charts/k8s-gateway/
+#    namespace: fog-dns
+#    values:
+#      - fog-dns.yaml.gotmpl
 
 #  - name: gitea
 #    chart:  gitea-charts/gitea
@@ -95,8 +95,8 @@ releases:
 #    values:
 #     - gitea.yaml.gotmpl
 
-  - name: url-redirector
-    chart:  ../url-redirector/helm/url-redirector/
-    namespace: url-redirector
-    values:
-      - url-redirector.yaml
+#  - name: url-redirector
+#    chart:  ../url-redirector/helm/url-redirector/
+#    namespace: url-redirector
+#    values:
+#      - url-redirector.yaml

@@ -1,0 +1,13 @@
+sudo -E talosctl cluster create --provisioner qemu \
+    --name=fog \
+    --endpoint=kube.fog.chalko.com \
+    --masters=1 \
+    --workers=1 \
+    --disk=20000 \
+    --memory-workers=4096 \
+    --nameservers 10.5.110.2 \
+    --registry-mirror docker.io=http://10.5.0.1:5000 \
+    --registry-mirror k8s.gcr.io=http://10.5.0.1:5001 \
+    --registry-mirror quay.io=http://10.5.0.1:5002 \
+    --registry-mirror gcr.io=http://10.5.0.1:5003 \
+    --registry-mirror ghcr.io=http://10.5.0.1:5004

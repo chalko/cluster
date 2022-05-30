@@ -7,7 +7,8 @@ virt-install --name ${VM}  \
     --os-type linux \
     --os-variant ubuntu20.04      \
     --network bridge=br0 \
-    --disk path=~/libvirt/images/${VM}.qcow2,size=20,device=disk \
+    --disk path=~/libvirt/images/${VM}.d1,size=10 \
+    --disk path=~/libvirt/images/${VM}.d2,size=20 \
     --cdrom ~/Downloads/talos-amd64.iso \
     --console=pty,target.type=serial \
     --graphics none

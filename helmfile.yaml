@@ -29,7 +29,7 @@ releases:
 #    version: v1.1.0
 #    values:
 #      - cert-manager.yaml
-#
+
 #  - name: letsencrypt
 #    namespace: cert-manager
 #    chart: ./letsencrypt
@@ -51,11 +51,11 @@ releases:
 #    values:
 #      - traefik.yaml.gotmpl
 #
-#  - name: kubernetes-dashboard
-#    chart: kubernetes-dashboard/kubernetes-dashboard
-#    namespace: kubernetes-dashboard
-#    values:
-#      - kubernetes-dashboard.yaml.gotmpl
+  - name: kubernetes-dashboard
+    chart: kubernetes-dashboard/kubernetes-dashboard
+    namespace: kubernetes-dashboard
+    values:
+      - kubernetes-dashboard.yaml.gotmpl
 #
 #  - name: kubernetes-dashboard-access
 #    chart: ./kubernetes-dashboard-access

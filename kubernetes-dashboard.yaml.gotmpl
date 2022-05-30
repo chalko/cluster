@@ -1,24 +1,58 @@
-protocolHttp: true
-service:
-  #  type: LoadBalancer
-  #  loadBalancerIP: 192.168.82.20
-  externalPort: 80
-ingress:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    ingress.kubernetes.io/ssl-redirect: "true"
-  enabled: true
-  hosts:
-    - {{ .Release.Name }}.{{ .Values.fog.domain}}
-  tls:
-      - secretName: {{ .Release.Name }}-tls
-        hosts:
-          - {{ .Release.Name}}.{{ .Values.fog.domain}}
 
+## Additional container arguments
+##
 extraArgs:
-  - --enable-insecure-login
-  #- --tls-cert-file=/cert/tls.crt
-  #- --tls-key-file=/cart/tls.key
-#metricsScraper:
+   - --enable-skip-login
+   - --enable-insecure-login
+   # - --system-banner="Welcome to Kubernetes"
+
+## Serve application over HTTP without TLS
+##
+## Note: If set to true, you may want to add --enable-insecure-login to extraArgs
+protocolHttp: true
+
+rbac:
+  # Start in ReadOnly mode.
+  # Specifies whether cluster-wide RBAC resources (ClusterRole, ClusterRolebinding)
+  # with read only permissions to all resources listed inside the cluster should be created
+  # Only dashboard-related Secrets and ConfigMaps will still be available for writing.
+  #
+  # The basic idea of the clusterReadOnlyRole
+  # is not to hide all the secrets and sensitive data but more
+  # to avoid accidental changes in the cluster outside the standard CI/CD.
+  #
+  # It is NOT RECOMMENDED to use this version in production.
+  # Instead you should review the role and remove all potentially sensitive parts such as
+  # access to persistentvolumes, pods/log etc.
+  #
+  # Independent from rbac.create parameter.
+  clusterReadOnlyRole: true
+
+
+
+
+
+#protocolHttp: true
+#service:
+#  #  type: LoadBalancer
+#  #  loadBalancerIP: 192.168.82.20
+#  externalPort: 80
+#ingress:
+#  annotations:
+#    cert-manager.io/cluster-issuer: letsencrypt-prod
+#    ingress.kubernetes.io/ssl-redirect: "true"
 #  enabled: true
-fullnameOverride: 'kubernetes-dashboard'
+#  hosts:
+#    - {{ .Release.Name }}.{{ .Values.fog.domain}}
+#  tls:
+#      - secretName: {{ .Release.Name }}-tls
+#        hosts:
+#          - {{ .Release.Name}}.{{ .Values.fog.domain}}
+#
+#extraArgs:
+#  - --enable-insecure-login
+#  #- --tls-cert-file=/cert/tls.crt
+#  #- --tls-key-file=/cart/tls.key
+##metricsScraper:
+##  enabled: true
+#fullnameOverride: 'kubernetes-dashboard'

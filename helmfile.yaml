@@ -30,15 +30,15 @@ releases:
     values:
       - cert-manager.yaml
 
-#  - name: letsencrypt
-#    namespace: cert-manager
-#    chart: ./letsencrypt
-#    createNamespace: false
-#    needs:
-#      - cert-manager/cert-manager
-#    secrets:
-#      - secrets.letsencrypt.yaml
-#
+  - name: letsencrypt
+    namespace: cert-manager
+    chart: ./letsencrypt
+    createNamespace: false
+    needs:
+      - cert-manager/cert-manager
+    secrets:
+      - secrets.letsencrypt.yaml
+
   - name: metallb
     namespace: metallb-system
     chart: metallb/metallb

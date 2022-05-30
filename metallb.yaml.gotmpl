@@ -3,4 +3,4 @@ configInline:
    - name: default
      protocol: layer2
      addresses:
-     - {{ .Values.fog.ingress.ip}}
+       {{ .Values.fog.lb.addresses}}

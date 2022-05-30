@@ -1,19 +1,19 @@
-version: v0.136.0
+version: v0.143.1
 dependencies:
 - name: cert-manager
   repository: https://charts.jetstack.io
   version: v1.1.0
 - name: kubernetes-dashboard
   repository: https://kubernetes.github.io/dashboard/
-  version: 5.0.3
+  version: 5.4.1
+- name: metallb
+  repository: https://metallb.github.io/metallb
+  version: 0.12.1
 - name: traefik
   repository: https://helm.traefik.io/traefik
-  version: 10.6.0
+  version: 10.20.0
 - name: whoami
   repository: https://cowboysysop.github.io/charts/
-  version: 2.5.0
-- name: yourls
-  repository: https://charts.yourls.org/
-  version: 3.0.4
-digest: sha256:596213e4818e20afb17923f6496fd80866a200a91b562c5e5a4c0e5de0516b4e
-generated: "2021-10-21T18:34:05.684308074-07:00"
+  version: 2.5.5
+digest: sha256:f7e2bd3839a6206872e102e442a8256e48adb468fa8408aa7b76cb87186e5f65
+generated: "2022-05-29T17:19:30.541525676-07:00"

@@ -13,6 +13,9 @@ repositories:
     url: https://releases.rancher.com/server-charts/stable
   - name: yourls
     url: https://charts.yourls.org/
+  - name: metallb
+    url: https://metallb.github.io/metallb
+
 
 environments:
   default:
@@ -38,9 +41,9 @@ releases:
 
   - name: metallb
     namespace: metallb-system
-    chart: ./metallb
-    secrets:
-      - secrets.metallb.yaml
+    chart: metallb/metallb
+    #secrets:
+    #  - secrets.metallb.yaml
 
   - name: traefik
     namespace: traefik

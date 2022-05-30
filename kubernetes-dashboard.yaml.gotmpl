@@ -1,15 +1,31 @@
 
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    #ingress.kubernetes.io/ssl-redirect: "true"
+  enabled: true
+  hosts:
+    - {{ .Release.Name }}.{{ .Values.fog.domain}}
+  tls:
+      - secretName: {{ .Release.Name }}-tls
+        hosts:
+          - {{ .Release.Name}}.{{ .Values.fog.domain}}
+
 ## Additional container arguments
 ##
 extraArgs:
-   - --enable-skip-login
-   - --enable-insecure-login
+   #- --enable-skip-login
+   #- --enable-insecure-login
    # - --system-banner="Welcome to Kubernetes"
 
 ## Serve application over HTTP without TLS
 ##
 ## Note: If set to true, you may want to add --enable-insecure-login to extraArgs
 protocolHttp: true
+
+service:
+  # Dashboard service port
+  externalPort: 80
 
 rbac:
   # Start in ReadOnly mode.

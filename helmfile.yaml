@@ -45,15 +45,12 @@ releases:
     values:
       - metallb.yaml.gotmpl
 
-    #secrets:
-    #  - secrets.metallb.yaml
-#
-#  - name: traefik
-#    namespace: traefik
-#    chart: traefik/traefik
-#    values:
-#      - traefik.yaml.gotmpl
-#
+  - name: traefik
+    namespace: traefik
+    chart: traefik/traefik
+    values:
+      - traefik.yaml.gotmpl
+
   - name: kubernetes-dashboard
     chart: kubernetes-dashboard/kubernetes-dashboard
     namespace: kubernetes-dashboard

@@ -23,83 +23,83 @@ environments:
     - fog.yaml
 
 releases:
-  - name: cert-manager
-    chart: jetstack/cert-manager
-    namespace: cert-manager
-    version: v1.1.0
-    values:
-      - cert-manager.yaml
-
-  - name: letsencrypt
-    namespace: cert-manager
-    chart: ./letsencrypt
-    createNamespace: false
-    needs:
-      - cert-manager/cert-manager
-    secrets:
-      - secrets.letsencrypt.yaml
-
-  - name: metallb
-    namespace: metallb-system
-    chart: metallb/metallb
-    #secrets:
-    #  - secrets.metallb.yaml
-
-  - name: traefik
-    namespace: traefik
-    chart: traefik/traefik
-    values:
-      - traefik.yaml.gotmpl
-
-  - name: kubernetes-dashboard
-    chart: kubernetes-dashboard/kubernetes-dashboard
-    namespace: kubernetes-dashboard
-    values:
-      - kubernetes-dashboard.yaml.gotmpl
-
-  - name: kubernetes-dashboard-access
-    chart: ./kubernetes-dashboard-access
-    namespace: kubernetes-dashboard
-    createNamespace: false
-    needs:
-      - kubernetes-dashboard/kubernetes-dashboard
-    values:
-      - kubernetes-dashboard-access.yaml
-
-#  - name: zorua
-#    namespace: zorua
-#    chart: ../sadm/zorua/
+#  - name: cert-manager
+#    chart: jetstack/cert-manager
+#    namespace: cert-manager
+#    version: v1.1.0
 #    values:
-#      - zorua.yaml
+#      - cert-manager.yaml
+#
+#  - name: letsencrypt
+#    namespace: cert-manager
+#    chart: ./letsencrypt
+#    createNamespace: false
+#    needs:
+#      - cert-manager/cert-manager
 #    secrets:
-#      - secrets.zorua.yaml
-
-  - name: whoami
-    namespace: whoami
-    chart: cowboysysop/whoami
-    values:
-      - whoami.yaml
-
-#  - name: rancher
-#    namespace: cattle-system
-#    chart: rancher-stable/rancher
+#      - secrets.letsencrypt.yaml
+#
+#  - name: metallb
+#    namespace: metallb-system
+#    chart: metallb/metallb
+#    #secrets:
+#    #  - secrets.metallb.yaml
+#
+#  - name: traefik
+#    namespace: traefik
+#    chart: traefik/traefik
 #    values:
-#      - rancher.yaml.gotmpl
-
-#  - name: fog-dns
-#    chart:  ../k8s_gateway/charts/k8s-gateway/
-#    namespace: fog-dns
+#      - traefik.yaml.gotmpl
+#
+#  - name: kubernetes-dashboard
+#    chart: kubernetes-dashboard/kubernetes-dashboard
+#    namespace: kubernetes-dashboard
 #    values:
-#      - fog-dns.yaml.gotmpl
-
-#  - name: gitea
-#    chart:  gitea-charts/gitea
-#    namespace: gitea
+#      - kubernetes-dashboard.yaml.gotmpl
+#
+#  - name: kubernetes-dashboard-access
+#    chart: ./kubernetes-dashboard-access
+#    namespace: kubernetes-dashboard
+#    createNamespace: false
+#    needs:
+#      - kubernetes-dashboard/kubernetes-dashboard
 #    values:
-#     - gitea.yaml.gotmpl
-
-#  - name: url-redirector
-#    chart:  ../url-redirector/helm/url-redirector/
-#    namespace: url-redirector
+#      - kubernetes-dashboard-access.yaml
+#
+##  - name: zorua
+##    namespace: zorua
+##    chart: ../sadm/zorua/
+##    values:
+##      - zorua.yaml
+##    secrets:
+##      - secrets.zorua.yaml
+#
+#  - name: whoami
+#    namespace: whoami
+#    chart: cowboysysop/whoami
 #    values:
-#      - url-redirector.yaml
+#      - whoami.yaml
+#
+##  - name: rancher
+##    namespace: cattle-system
+##    chart: rancher-stable/rancher
+##    values:
+##      - rancher.yaml.gotmpl
+#
+##  - name: fog-dns
+##    chart:  ../k8s_gateway/charts/k8s-gateway/
+##    namespace: fog-dns
+##    values:
+##      - fog-dns.yaml.gotmpl
+#
+##  - name: gitea
+##    chart:  gitea-charts/gitea
+##    namespace: gitea
+##    values:
+##     - gitea.yaml.gotmpl
+#
+##  - name: url-redirector
+##    chart:  ../url-redirector/helm/url-redirector/
+##    namespace: url-redirector
+##    values:
+##      - url-redirector.yaml

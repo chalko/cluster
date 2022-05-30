@@ -3,6 +3,6 @@ fog:
   domain: fog.chalko.com
   lb:
     addresses:
-      - 10.211.183.220-10.211.183.250
+      - 198.51.100.0/24
   ingress:
-    ip: 10.211.183.241
+    ip: 198.51.100.200

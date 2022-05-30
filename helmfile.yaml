@@ -73,13 +73,13 @@ releases:
 ##      - zorua.yaml
 ##    secrets:
 ##      - secrets.zorua.yaml
-#
-#  - name: whoami
-#    namespace: whoami
-#    chart: cowboysysop/whoami
-#    values:
-#      - whoami.yaml
-#
+
+  - name: whoami
+    namespace: whoami
+    chart: cowboysysop/whoami
+    values:
+      - whoami.yaml
+
 ##  - name: rancher
 ##    namespace: cattle-system
 ##    chart: rancher-stable/rancher

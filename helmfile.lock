@@ -12,5 +12,8 @@ dependencies:
 - name: traefik
   repository: https://helm.traefik.io/traefik
   version: 10.20.0
-digest: sha256:8b3821173e2313ab1484ec54c9aa47139a9a20c427f19849eac918b05004c911
-generated: "2022-05-29T20:24:47.321585694-07:00"
+- name: whoami
+  repository: https://cowboysysop.github.io/charts/
+  version: 2.5.5
+digest: sha256:103650da37adf42856f0e99a5cc0593e82aa469a9b7984dd9887db8d53eb61d8
+generated: "2022-05-29T20:30:30.502479693-07:00"

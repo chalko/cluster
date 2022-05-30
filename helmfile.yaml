@@ -23,12 +23,12 @@ environments:
     - fog.yaml
 
 releases:
-#  - name: cert-manager
-#    chart: jetstack/cert-manager
-#    namespace: cert-manager
-#    version: v1.1.0
-#    values:
-#      - cert-manager.yaml
+  - name: cert-manager
+    chart: jetstack/cert-manager
+    namespace: cert-manager
+    version: v1.8.0
+    values:
+      - cert-manager.yaml
 
 #  - name: letsencrypt
 #    namespace: cert-manager

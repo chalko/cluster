@@ -5,15 +5,18 @@ dependencies:
   version: v1.8.0
 - name: kubernetes-dashboard
   repository: https://kubernetes.github.io/dashboard/
-  version: 5.4.1
+  version: 5.11.0
 - name: metallb
   repository: https://metallb.github.io/metallb
-  version: 0.12.1
+  version: 0.13.7
+- name: rook-ceph
+  repository: https://charts.rook.io/release
+  version: v1.10.5
 - name: traefik
   repository: https://helm.traefik.io/traefik
-  version: 10.20.0
+  version: 19.0.3
 - name: whoami
   repository: https://cowboysysop.github.io/charts/
-  version: 2.5.5
-digest: sha256:103650da37adf42856f0e99a5cc0593e82aa469a9b7984dd9887db8d53eb61d8
-generated: "2022-05-29T20:30:30.502479693-07:00"
+  version: 2.7.0
+digest: sha256:5ff4ec3915f7b09faa7844859f3c5b31520f2066b3bdea058da2457cf43cf822
+generated: "2022-11-06T21:36:42.449187686-08:00"

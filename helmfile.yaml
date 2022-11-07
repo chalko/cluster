@@ -15,7 +15,8 @@ repositories:
     url: https://charts.yourls.org/
   - name: metallb
     url: https://metallb.github.io/metallb
-
+  - name: rook-release
+    url: https://charts.rook.io/release
 
 environments:
   default:
@@ -103,3 +104,9 @@ releases:
 ##    namespace: url-redirector
 ##    values:
 ##      - url-redirector.yaml
+
+  - name: rook-ceph
+    namespace: rook-ceph
+    chart: rook-release/rook-ceph
+    values:
+      - rook-ceph.yaml
